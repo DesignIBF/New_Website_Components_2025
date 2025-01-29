@@ -58,3 +58,12 @@ p {
   font-size: 14px;
   color: var(--IBF-dark-grey);
 }
+
+/*****************************************/
+/* Cards                                 */
+/*****************************************/
+
+.card-tag,
+.card-color {
+  color: var(--IBF-dark-grey);
+}

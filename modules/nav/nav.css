@@ -1,0 +1,149 @@
+.my-new-module-template {
+  background-color: #e6f7ff;
+  padding: 2em;
+}
+
+nav {
+  /* background-color: var(--IBF-green); */
+}
+
+.top-half .nav-logo {
+  width: 75px;
+}
+
+.top-half {
+  background: var(--IBF-grey);
+}
+
+.bottom-half .nav-logo {
+  width: 50px;
+}
+
+.top-half {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-half {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.top-half > .left,
+.top-half > .right {
+  display: flex;
+  gap: 1em;
+}
+
+.bottom-half > .left,
+.bottom-half > .center,
+.bottom-half > .right {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.bottom-half > .center {
+  justify-self: center;
+  width: 100%;
+}
+
+.bottom-half > .right {
+  justify-self: end;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+
+  padding: 1.2em;
+  font-size: 16px;
+  border: 1px solid var(--IBF-dark-grey);
+  border-radius: 5em;
+
+  background: var(--IBF-grey);
+
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#search-bar {
+  border: none;
+  background: none;
+}
+
+input {
+  padding: 0;
+  width: 100%;
+}
+
+input:focus {
+  border: none;
+}
+
+.results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+  max-height: 200px; /* Limit height for long lists */
+  overflow-y: auto; /* Scroll for overflow */
+  z-index: 1000;
+}
+
+.results div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.results div:hover {
+  background-color: #f0f0f0;
+}
+
+.burger {
+  display: none;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  #search-bar {
+    min-width: 100%; /* Use full width on mobile */
+    font-size: 14px; /* Slightly smaller font for mobile */
+    padding: 0.8em; /* Reduce padding for smaller screens */
+  }
+
+  .search-container {
+    width: 100%; /* Ensure the container is also responsive */
+  }
+
+  .bottom-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .bottom-half > .left > p {
+    display: none;
+  }
+
+  .bottom-half > .center {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    flex-direction: column; /* Stack the content in these sections */
+    width: 100%;
+    gap: 0.5em; /* Reduce gaps between elements */
+  }
+
+  .bottom-half > .left > p.burger {
+    display: block;
+  }
+}
