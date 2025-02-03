@@ -1,0 +1,54 @@
+/*****************************************/
+/* Fonts stylings                        */
+/*****************************************/
+h1,
+h2,
+h3,
+h4,
+.product-title {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 75;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 120%;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+  color: var(--IBF-pink);
+}
+
+.product-title {
+  font-size: 22px;
+}
+
+p {
+  margin: 0;
+  line-height: 150%;
+  transition: 0.3s;
+}
+
+/*****************************************/
+/* Cards                                 */
+/*****************************************/
+
+.card-tag,
+.card-color {
+  color: var(--IBF-dark-grey);
+}

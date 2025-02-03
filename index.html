@@ -3,17 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Module Tester</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Module Tester</h1>
-      <p>All modules are dynamically loaded below:</p>
-    </header>
+    <div id="nav"></div>
+    <main>
+      <!-- Nested component -->
+      <div id="spotlightBanner"></div>
+      <div id="spotlightBannerWithCards"></div>
+      <div id="spotlightBannerRegularImage"></div>
+      <div id="spotlightBannerRegularImageWithCards"></div>
+      <div id="categoriesHomepage"></div>
+      <div id="categoriesLandingpage"></div>
+      <div id="bannersSection"></div>
+      <div id="contentCardsSection"></div>
+      <div id="productCardsSection"></div>
+      <div id="farmBannersSection"></div>
+      <div id="uspSection"></div>
 
-    <main id="module-container"></main>
+      <!-- <div id="section"></div> -->
+    </main>
 
-    <script src="./js/main.js"></script>
+    <!-- <div id="footer"></div> -->
+
+    <script src="scripts/loadComponents.js"></script>
+    <script src="scripts/fillContent.js"></script>
+    <script src="scripts/grid.js"></script>
+    <script src="scripts/scrollPositionOnPage.js"></script>
+    <script src="scripts/nav.js"></script>
   </body>
 </html>

@@ -1,0 +1,826 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap");
+@import url("fonts.css");
+@import url("buttons.css");
+@import url("cards.css");
+@import url("nav.css");
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/***********************************************/
+
+/*****************************************/
+/* Root                                  */
+/*****************************************/
+:root {
+  --IBF-pink: #e01983;
+  --IBF-light-pink: #f7f0f2;
+  --IBF-extra-light-pink: #fefbfd;
+  --IBF-dark-pink: #b3166a;
+
+  --IBF-green: #0c331f;
+  --IBF-medium-green: #365c54;
+  --IBF-soft-green: #3e6b62;
+  --IBF-light-green: #e9f1ef;
+
+  --IBF-white: white;
+  --IBF-medium-grey: #d9d9d9;
+  --IBF-grey: #f5f5f5;
+  --IBF-dark-grey: #999999;
+
+  --IBF-cream: #f8f6f5;
+  --IBF-dark-cream: #f5f0f0;
+
+  --col-12: 1296px;
+  --col-11: 1186px;
+  --col-10: 1076px;
+  --col-9: 966px;
+  --col-8: 856px;
+  --col-7: 746px;
+  --col-6: 636px;
+  --col-5: 526px;
+  --col-4: 416px;
+  --col-3: 306px;
+  --col-2: 196px;
+  --col-1-25: 131px;
+  --col-1: 86px;
+
+  /* Spacing */
+  --container-padding: 1rem;
+}
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*****************************************/
+/* Body                                  */
+/*****************************************/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  color: var(--IBF-green);
+
+  background-color: pink;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+main > div {
+  background-color: white;
+}
+
+/*****************************************/
+/* Header                                */
+/*****************************************/
+header {
+  text-align: center;
+  width: 100%;
+  padding: 2em;
+  background: #4caf50;
+  color: white;
+}
+
+/*****************************************/
+/* Nav Bar                               */
+/*****************************************/
+
+/*****************************************/
+/* Grid overlay                          */
+/*****************************************/
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1296px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+.grid-overlay .grid-column {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+.grid-overlay .grid-column:nth-child(odd) {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+/* Show overlay when active */
+.grid-overlay.active {
+  visibility: visible;
+}
+
+/* Summary styling                       */
+/*****************************************/
+summary {
+  font-family: "Noto Serif", sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.details {
+  padding: 0em 2em 1em 2em;
+}
+
+/* Link styling                          */
+/*****************************************/
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  color: inherit;
+}
+
+a:hover {
+  /* color: var(--IBF-pink); */
+  cursor: pointer;
+}
+
+a:hover p {
+  color: var(--IBF-soft-green);
+}
+
+a:hover .product-title {
+  color: var(--IBF-soft-green);
+}
+
+a:hover .card-tag,
+a:hover .card-color {
+  color: var(--IBF-dark-pink);
+}
+
+/*****************************************/
+/* Flex styling                          */
+/*****************************************/
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.a-i-start {
+  align-items: start;
+}
+
+.a-i-center {
+  align-items: center;
+}
+
+.a-i-stretch {
+  align-items: stretch;
+}
+
+.j-c-start {
+  justify-content: start;
+}
+
+.j-c-end {
+  justify-content: end;
+}
+
+.j-c-center {
+  justify-content: center;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-center {
+  text-align: center;
+}
+
+/*****************************************/
+/* Grid styling                          */
+/*****************************************/
+.grid-2 {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1em; /* Space between items */
+}
+
+.grid-4 > .content-card {
+  max-width: none;
+}
+
+@media (max-width: 1320px) {
+  .grid-4 {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 equal columns for smaller screens */
+  }
+}
+
+@media (max-width: 1020px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns for mobile */
+  }
+}
+
+@media (max-width: 660px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns for mobile */
+  }
+
+  #regular-banner-with-cards > div > div > a:nth-child(1) > div {
+    min-width: none;
+  }
+}
+
+/*****************************************/
+/* Section                               */
+/*****************************************/
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid pink; */
+  padding: 3em 2em;
+}
+
+/*****************************************/
+/* Components ID styling                 */
+/*****************************************/
+#spotlightBanner {
+  min-height: 600px;
+}
+
+#farmBanner {
+  width: 100%;
+  min-height: 200px;
+}
+
+/*****************************************/
+/* Containers                            */
+/*****************************************/
+
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Ensures no overflow beyond its parent */
+  /* border: 0.01px dotted blue; */
+}
+
+/* Grid Widths */
+.max-12 {
+  max-width: var(--col-12);
+}
+.max-11 {
+  max-width: var(--col-11);
+}
+.max-10 {
+  max-width: var(--col-10);
+}
+.max-9 {
+  max-width: var(--col-9);
+}
+.max-8 {
+  max-width: var(--col-8);
+}
+.max-7 {
+  max-width: var(--col-7);
+}
+.max-6 {
+  max-width: var(--col-6);
+}
+.max-5 {
+  max-width: var(--col-5);
+}
+.max-4 {
+  max-width: var(--col-4);
+}
+.max-3 {
+  max-width: var(--col-3);
+}
+.max-2 {
+  max-width: var(--col-2);
+}
+.max-1 {
+  max-width: var(--col-1);
+}
+
+.min-12 {
+  min-width: var(--col-12);
+}
+.min-11 {
+  min-width: var(--col-11);
+}
+.min-10 {
+  min-width: var(--col-10);
+}
+.min-9 {
+  min-width: var(--col-9);
+}
+.min-8 {
+  min-width: var(--col-8);
+}
+.min-7 {
+  min-width: var(--col-7);
+}
+.min-6 {
+  min-width: var(--col-6);
+}
+.min-5 {
+  min-width: var(--col-5);
+}
+.min-4 {
+  min-width: var(--col-4);
+}
+.min-3 {
+  min-width: var(--col-3);
+}
+.min-2 {
+  min-width: var(--col-2);
+}
+.min-1-25 {
+  min-width: var(--col-1-25);
+}
+.min-1 {
+  min-width: var(--col-1);
+}
+
+.min-category-card {
+  min-width: 119px;
+}
+
+/*****************************************/
+/* Z-index                               */
+/*****************************************/
+.z-10 {
+  z-index: 10;
+}
+
+/*****************************************/
+/* Scrollbar styling                     */
+/*****************************************/
+/* WebKit Browsers */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--IBF-pink);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--IBF-pink);
+}
+
+/* Firefox */
+body {
+  scrollbar-color: var(--IBF-pink) #f4f4f4;
+  scrollbar-width: thin;
+}
+
+/*****************************************/
+/* Form styling                          */
+/*****************************************/
+label,
+input {
+  text-align: left;
+}
+
+input {
+  padding: 1em 1em;
+  border-radius: 0.25em;
+  border: 1px solid #909090;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border: 1px solid gold;
+}
+
+fieldset {
+  border: none !important;
+}
+
+/*****************************************/
+/* List styling                          */
+/*****************************************/
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+li {
+  text-align: left;
+}
+
+#rich-text-with-state li::marker,
+#rich-text-with-all-states li::marker {
+  content: "📍";
+}
+
+/*****************************************/
+/* IMG styling                           */
+/*****************************************/
+.img-round {
+  border-radius: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.img-square {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.img-hd {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.img-icon {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  max-width: 64px;
+}
+
+/* Cards get Hover effect on image       */
+/*****************************************/
+
+/* Content card image container */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25em; /* Adjust if needed */
+  width: 100%; /* Matches the card width */
+  /* aspect-ratio: 1/1; Ensures a square container */
+}
+
+/* Ensure the image fits inside the container */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/* Scale up the image on hover */
+a:hover .img-container img {
+  transform: scale(1.1); /* Adjust scale factor as needed */
+}
+
+.aspect-ratio-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 100%;
+  overflow: hidden; /* Ensures the image does not overflow the container */
+}
+
+.aspect-ratio-container img {
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+/*****************************************/
+/* Video styling                         */
+/*****************************************/
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.5em;
+}
+
+/*****************************************/
+/* Backgrounds                           */
+/*****************************************/
+.bg-green {
+  background: var(--IBF-light-green);
+}
+
+.bg-pink {
+  background: var(--IBF-light-pink);
+}
+
+.bg-cream {
+  background: var(--IBF-cream);
+}
+
+.bg-light-pink {
+  background: var(--IBF-light-pink);
+}
+
+.bg-extra-light-pink {
+  background: var(--IBF-extra-light-pink);
+}
+
+.bg-medium-grey {
+  background: var(--IBF-medium-grey);
+}
+
+.bg-image {
+  background: url(../assets/images/squares.png) center / cover;
+  height: auto;
+  width: auto;
+}
+
+.banner-bg-image {
+  background: url(../assets/images/squares.png) center;
+  background-size: auto 100%;
+  border: none;
+
+  transition: 0.3s ease;
+}
+
+.banner-bg-image:hover {
+  background-size: auto 110%;
+}
+
+.hidden-image {
+  display: none;
+  border-radius: 0.5em;
+}
+
+.review-stars {
+  width: 25%;
+}
+
+/*****************************************/
+/* ID section Styling per module         */
+/*****************************************/
+
+#rich-text-with-accordion summary,
+#rich-text-with-accordion p,
+#rich-text-reviews p,
+#rich-text-with-reviews p,
+#rich-text-reviews h2,
+#sign-up-form h2,
+#usps p {
+  text-align: center;
+}
+
+/*****************************************/
+/* Clean-up this mess                    */
+/*****************************************/
+
+summary::marker {
+  margin-right: auto;
+}
+
+.padding-5em {
+  padding: 0.5em;
+}
+
+.padding-1em {
+  padding: 1em;
+}
+
+.padding-1_5em {
+  padding: 1.5em;
+}
+
+.padding-2em {
+  padding: 2em;
+}
+
+.order-1 {
+  order: -1;
+}
+
+.order-2 {
+  order: -2;
+}
+
+.border-4px {
+  border-radius: 0.25em;
+}
+
+.border-8px {
+  border-radius: 0.5em;
+}
+
+.border-16px {
+  border-radius: 1em;
+}
+
+.border-100 {
+  border-radius: 100%;
+}
+
+.content-card > img {
+  border-radius: 0.25em;
+}
+
+.gap-3 {
+  gap: 3em;
+}
+
+.gap-2-5 {
+  gap: 2.5em;
+}
+
+.gap-2 {
+  gap: 2em;
+}
+
+.gap-15 {
+  gap: 1.5em;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.gap-5 {
+  gap: 0.5em;
+}
+
+.gap-25 {
+  gap: 0.25em;
+}
+
+.gap-24px {
+  gap: 24px;
+}
+
+.height {
+  height: 100%;
+}
+
+.fit-height {
+  height: fit-content;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#banner {
+  padding: 2em 1em;
+  height: 100%;
+}
+
+#banner:hover .btn {
+  color: var(--IBF-white);
+  background: var(--IBF-pink);
+}
+
+#showAllBannersBtn {
+  display: none;
+}
+
+/*****************************************/
+
+/* Cards go into scroll when the width is reached */
+@media (max-width: 990px) {
+  .side-scroll {
+    flex-direction: row !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .custom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px; /* Adjust gap between items */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  section {
+    padding: 2em 1em;
+  }
+  .container {
+    width: 100%;
+    /* gap: 1em; */
+  }
+
+  .btn {
+    white-space: nowrap;
+  }
+
+  .content-card {
+    min-width: var(--col-2);
+  }
+
+  .categories-card {
+    min-width: var(--col-1-25);
+  }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  .bg-image {
+    background: none !important;
+  }
+
+  .grid-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #spotlightBanner {
+    min-height: 0;
+  }
+
+  #carousel-arrows {
+    display: none;
+  }
+
+  .hidden-image {
+    display: block;
+    width: 100%;
+  }
+
+  .banner-image {
+    order: -1;
+  }
+
+  .order-1-mobile {
+    order: -1;
+  }
+
+  .between {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-content: center;
+  }
+
+  /* padding fix of details on mobile */
+  .details {
+    padding: 0em 1em 1em 1em;
+  }
+
+  /* row reverse naar column op mobile */
+  .flex-row-reverse {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*****************************************/
+  /* Logo fix on mobile                    */
+  /*****************************************/
+  #hs-link-dnd_area-module-1_hs_logo_widget > img {
+    width: 120px !important;
+  }
+}

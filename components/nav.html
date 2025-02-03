@@ -1,0 +1,48 @@
+<nav id="nav">
+  <div class="container flex-row gap-1 j-c-center">
+    <div class="container">
+      <div class="top-half">
+        <div class="left">
+          <img src="./assets/images/logo2.svg" class="nav-logo" />
+          <p>✅ Hi Jennifer... happy to see you</p>
+        </div>
+        <div class="right">
+          <p>👩‍🚀 Support</p>
+        </div>
+      </div>
+
+      <div class="bottom-half">
+        <div class="left">
+          <img src="./assets/images/logo3.svg" class="nav-logo" />
+          <p id="allFlowers">All flowers ⬆</p>
+          <p id="colors">Colors ⬇</p>
+          <p id="more">More ⬇</p>
+          <p class="burger">🍔</p>
+        </div>
+
+        <div class="center">
+          <div class="search-container">
+            <p>🔎</p>
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="What flowers do you need?"
+              autocomplete="off"
+            />
+            <div id="search-results" class="results"></div>
+          </div>
+        </div>
+
+        <div class="right">
+          <p>🙆‍♂️</p>
+          <p>♥️</p>
+          <p class="btn btn-confirmed">🛒 5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-component="components/dropdownContainerFlowers.html"></div>
+  <div data-component="components/dropdownContainerColors.html"></div>
+</nav>
+<script src="scripts/nav.js"></script>
