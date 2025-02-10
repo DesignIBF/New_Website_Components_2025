@@ -1,84 +1,140 @@
 function loadComponent(elementId, filePath) {
-  fetch(filePath)
-    .then((response) => response.text())
+  return fetch(filePath)
+    .then((response) => {
+      if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+      return response.text();
+    })
     .then((html) => {
-      document.getElementById(elementId).innerHTML = html;
-      loadNestedComponents(document.getElementById(elementId)); // Load any nested components inside
+      const container = document.getElementById(elementId);
+      container.innerHTML = html;
+      loadNestedComponents(container); // Load nested components
+      console.log(`Loaded component: ${elementId}`);
     })
     .catch((error) => console.error(`Error loading ${filePath}:`, error));
 }
 
 function loadNestedComponents(parentElement) {
   const elements = parentElement.querySelectorAll("[data-component]");
-  if (elements.length === 0) return; // No nested components found
+  if (elements.length === 0) return;
 
   elements.forEach((el) => {
-    let file = el.getAttribute("data-component");
+    const file = el.getAttribute("data-component");
 
     fetch(file)
-      .then((response) => response.text())
+      .then((response) => {
+        if (!response.ok) throw new Error(`Failed to load ${file}`);
+        return response.text();
+      })
       .then((html) => {
         el.innerHTML = html;
-        loadNestedComponents(el); // Recursively load further nested components
+        loadNestedComponents(el); // Recursively load nested components
       })
-      .catch((error) => console.error(`Error loading ${file}:`, error));
+      .catch((error) =>
+        console.error(`Error loading nested component: ${file}`, error)
+      );
   });
 }
 
-///////////////////////////////////////////////
-///////////////////////////////////////////////
-// Load top-level components down below
-///////////////////////////////////////////////
+// Array of components and their corresponding JS files
+const components = [
+  { id: "nav", filePath: "components/nav.html", jsFile: "scripts/nav.js" },
+  { id: "footer", filePath: "components/footer.html", jsFile: null },
+  {
+    id: "spotlightBanner",
+    filePath: "components/spotlightBanner.html",
+    jsFile: null,
+  },
+  {
+    id: "spotlightBannerWithCards",
+    filePath: "components/spotlightBannerWithCards.html",
+    jsFile: null,
+  },
+  {
+    id: "spotlightBannerRegularImage",
+    filePath: "components/spotlightBannerRegularImage.html",
+    jsFile: null,
+  },
+  {
+    id: "spotlightBannerRegularImageWithCards",
+    filePath: "components/spotlightBannerRegularImageWithCards.html",
+    jsFile: null,
+  },
+  {
+    id: "categoriesHomepage",
+    filePath: "components/categoriesHomepage.html",
+    jsFile: null,
+  },
+  {
+    id: "categoriesLandingpage",
+    filePath: "components/categoriesLandingpage.html",
+    jsFile: null,
+  },
+  {
+    id: "bannersSection",
+    filePath: "components/bannersSection.html",
+    jsFile: null,
+  },
+  {
+    id: "contentCardsSection",
+    filePath: "components/contentCardsSection.html",
+    jsFile: null,
+  },
+  {
+    id: "productCardsSection",
+    filePath: "components/productCardsSection.html",
+    jsFile: null,
+  },
+  {
+    id: "farmBannersSection",
+    filePath: "components/farmBannersSection.html",
+    jsFile: null,
+  },
+  { id: "uspSection", filePath: "components/uspSection.html", jsFile: null },
+  {
+    id: "listsSection",
+    filePath: "components/listsSection.html",
+    jsFile: null,
+  },
+  {
+    id: "logosSection",
+    filePath: "components/logosSection.html",
+    jsFile: null,
+  },
+  {
+    id: "articleSection",
+    filePath: "components/articleSection.html",
+    jsFile: null,
+  },
+  {
+    id: "faqSection",
+    filePath: "components/faqSection.html",
+    jsFile: "scripts/faqSection.js",
+  },
+];
 
-///////////////////////////////////////////////
-// Not in use
-///////////////////////////////////////////////
+// Function to load all components
+function loadAllComponents() {
+  const promises = components.map((component) =>
+    loadComponent(component.id, component.filePath)
+  );
 
-// loadComponent("header", "components/header.html");
+  // Wait for all components to load
+  Promise.all(promises)
+    .then(() => {
+      console.log("All components loaded!");
 
-// loadComponent("nav", "components/nav.html");
+      // Load JavaScript files for components
+      components.forEach((component) => {
+        if (component.jsFile) {
+          const scriptTag = document.createElement("script");
+          scriptTag.src = component.jsFile;
+          document.body.appendChild(scriptTag);
+          console.log(`Loaded script: ${component.jsFile}`);
+        }
+      });
+    })
+    .catch((error) => console.error("Error loading components:", error));
+}
 
-// loadComponent("section", "components/section.html");
-
-// loadComponent("footer", "components/footer.html");
-
-///////////////////////////////////////////////
-
-///////////////////////////////////////////////
-// In use
-///////////////////////////////////////////////
-
-loadComponent("nav", "components/nav.html");
-
-loadComponent("spotlightBanner", "components/spotlightBanner.html");
-
-loadComponent(
-  "spotlightBannerWithCards",
-  "components/spotlightBannerWithCards.html"
-);
-
-loadComponent(
-  "spotlightBannerRegularImage",
-  "components/spotlightBannerRegularImage.html"
-);
-
-loadComponent(
-  "spotlightBannerRegularImageWithCards",
-  "components/spotlightBannerRegularImageWithCards.html"
-);
-
-loadComponent("categoriesHomepage", "components/categoriesHomepage.html");
-
-loadComponent("categoriesLandingpage", "components/categoriesLandingpage.html");
-
-loadComponent("bannersSection", "components/bannersSection.html");
-
-loadComponent("contentCardsSection", "components/contentCardsSection.html");
-
-loadComponent("productCardsSection", "components/productCardsSection.html");
-
-loadComponent("farmBannersSection", "components/farmBannersSection.html");
-
-loadComponent("uspSection", "components/uspSection.html");
-
-///////////////////////////////////////////////
+// Start loading components on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", loadAllComponents);

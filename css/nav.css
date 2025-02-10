@@ -1,4 +1,8 @@
 #nav {
+  /* background-color: white; */
+}
+
+#nav > div > div {
   background-color: white;
 }
 
@@ -63,7 +67,7 @@
   position: relative;
   width: 100%;
 
-  padding: 1.2em;
+  /* padding: 1.2em; */
   font-size: 16px;
   border: 1px solid var(--IBF-dark-grey);
   border-radius: 5em;
@@ -157,7 +161,8 @@ input:focus {
 /* -------------------------------------------- */
 
 #dropdownContainerFlowers,
-#dropdownContainerColors {
+#dropdownContainerColors,
+#dropdownContainerMore {
   position: relative;
   top: 100%;
   left: 0;
@@ -166,8 +171,13 @@ input:focus {
   padding: 2em 1em;
 }
 
+#dropdownContainerMore {
+  left: 200px;
+}
+
 #dropdownContainerFlowers.hover-active,
-#dropdownContainerColors.hover-active {
+#dropdownContainerColors.hover-active,
+#dropdownContainerMore.hover-active {
   display: flex;
 }
 

@@ -3,6 +3,9 @@
 @import url("buttons.css");
 @import url("cards.css");
 @import url("nav.css");
+@import url("footer.css");
+@import url("faq.css");
+@import url("article.css");
 
 /***********************************************/
 /* CSS @imports must be at the top of the file */
@@ -77,6 +80,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  /* position: absolute; */
+  top: 200px;
+  z-index: -10;
 }
 
 main > div {
@@ -147,7 +153,7 @@ summary {
 /*****************************************/
 a {
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.1s ease;
   color: inherit;
 }
 
@@ -235,38 +241,32 @@ a:hover .card-color {
   grid-template-columns: 7fr 5fr;
 }
 
-.grid-4 {
+.grid-banners {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 1em; /* Space between items */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-.grid-4 > .content-card {
-  max-width: none;
-}
-
-@media (max-width: 1320px) {
-  .grid-4 {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* 3 equal columns for smaller screens */
-  }
+.grid-lists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 1020px) {
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns for mobile */
+  .grid-lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  #regular-banner-with-cards > div > div > a:nth-child(1) > div {
+    min-width: none;
   }
 }
 
 @media (max-width: 660px) {
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns for mobile */
-  }
-
-  #regular-banner-with-cards > div > div > a:nth-child(1) > div {
-    min-width: none;
+  .grid-lists {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -575,6 +575,12 @@ iframe {
   width: auto;
 }
 
+.bg-image-perm {
+  background: url(../assets/images/squares.png) center / cover;
+  height: auto;
+  width: auto;
+}
+
 .banner-bg-image {
   background: url(../assets/images/squares.png) center;
   background-size: auto 100%;
@@ -716,10 +722,6 @@ summary::marker {
   background: var(--IBF-pink);
 }
 
-#showAllBannersBtn {
-  display: none;
-}
-
 /*****************************************/
 
 /* Cards go into scroll when the width is reached */
@@ -817,10 +819,27 @@ summary::marker {
     flex-direction: column;
   }
 
+  .grid-banners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
   /*****************************************/
   /* Logo fix on mobile                    */
   /*****************************************/
   #hs-link-dnd_area-module-1_hs_logo_widget > img {
     width: 120px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid-banners {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  #farmBanner {
+    min-height: 150px;
   }
 }

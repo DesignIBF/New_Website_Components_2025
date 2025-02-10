@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     p: "This is sample paragraph text",
     button: "Click Me",
     a: "This is a button",
+    li: "These are list elements",
   };
 
   const defaultImageSrc = "./assets/images/squares.png"; // Replace with your image URL
@@ -31,10 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // **Force replace all images with the default one**
+    // **Only replace images if they have no valid `src` defined**
     document.querySelectorAll("img").forEach((img) => {
-      img.src = defaultImageSrc;
-      img.alt = "Default Image"; // Optional for accessibility
+      if (
+        !img.src ||
+        img.src.includes("placeholder") ||
+        img.src.trim() === ""
+      ) {
+        img.src = defaultImageSrc;
+        img.alt = "Default Image"; // Optional for accessibility
+      }
     });
   }
 

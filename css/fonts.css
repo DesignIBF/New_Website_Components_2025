@@ -44,6 +44,19 @@ p {
   transition: 0.3s;
 }
 
+.intro {
+  font-family: "Noto Serif", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+quote {
+  text-align: center;
+  font-family: "Noto Serif";
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 /*****************************************/
 /* Cards                                 */
 /*****************************************/

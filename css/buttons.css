@@ -58,9 +58,24 @@
   background-color: var(--IBF-green);
   color: white;
 }
+
 .btn-confirmed:hover {
   background-color: var(--IBF-soft-green);
   color: white;
   border: none;
   cursor: default !important;
+}
+
+/*****************************************/
+
+.btn-footer {
+  background-color: none;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-footer:hover {
+  background-color: white;
+  color: var(--IBF-green);
+  border: 1px solid white;
 }

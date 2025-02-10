@@ -1,0 +1,16 @@
+footer {
+  background: var(--IBF-green);
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  width: fit-content;
+}
+
+a:hover {
+  color: var(--IBF-pink);
+}
