@@ -106,6 +106,11 @@ const components = [
     jsFile: null,
   },
   {
+    id: "newsletterSection",
+    filePath: "components/newsletterSection.html",
+    jsFile: null,
+  },
+  {
     id: "faqSection",
     filePath: "components/faqSection.html",
     jsFile: "scripts/faqSection.js",

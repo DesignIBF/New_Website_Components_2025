@@ -70,12 +70,51 @@
 
 .btn-footer {
   background-color: none;
-  color: white;
-  border: 1px solid white;
+  color: var(--IBF-green);
+  border: 1px solid var(--IBF-green);
 }
 
 .btn-footer:hover {
-  background-color: white;
-  color: var(--IBF-green);
-  border: 1px solid white;
+  background-color: var(--IBF-green);
+  color: white;
+  border: 1px solid var(--IBF-green);
+}
+
+/*****************************************/
+
+/* Confirmed state styling */
+button.confirmed {
+  background-color: var(--IBF-medium-green);
+  color: white;
+  cursor: default;
+}
+
+button.confirmed:hover {
+  background-color: var(--IBF-medium-green);
+  color: white;
+}
+
+/*****************************************/
+/* Button moves down from the container  */
+/*****************************************/
+
+/*show button next to h2 on desktop*/
+#desktop-btn {
+  display: flex;
+}
+
+#mobile-btn {
+  display: none;
+}
+
+/*show button below section on mobile*/
+@media (max-width: 767px) {
+  #desktop-btn {
+    display: none;
+  }
+
+  #mobile-btn {
+    display: flex;
+    align-self: center;
+  }
 }

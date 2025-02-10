@@ -46,13 +46,13 @@
 
 .faq-item svg {
   height: 40px;
-  transform: rotate(-180deg);
+  transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
 /* Rotate the SVG when the answer is open */
 .faq-item.open svg {
-  transform: rotate(0deg);
+  transform: rotate(-180deg);
   transition: transform 0.3s ease;
 }
 

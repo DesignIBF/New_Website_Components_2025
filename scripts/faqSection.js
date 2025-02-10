@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Rotate SVG icon
         svgIcon.style.transform = faqItem.classList.contains("open")
-          ? "rotate(0deg)"
-          : "rotate(-180deg)";
+          ? "rotate(-180deg)"
+          : "rotate(0deg)";
       });
     });
   }

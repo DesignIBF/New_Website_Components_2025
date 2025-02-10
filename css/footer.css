@@ -1,6 +1,6 @@
 footer {
-  background: var(--IBF-green);
-  color: white;
+  background: var(--IBF-dark-cream);
+  color: var(--IBF-green);
 }
 
 ul {
@@ -13,4 +13,21 @@ a {
 
 a:hover {
   color: var(--IBF-pink);
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 767px) {
+  .grid-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 660px) {
+  .grid-footer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -175,6 +175,14 @@ a:hover .card-color {
   color: var(--IBF-dark-pink);
 }
 
+a path {
+  transition: 0.1s;
+}
+
+a:hover path {
+  stroke: var(--IBF-pink);
+}
+
 /*****************************************/
 /* Flex styling                          */
 /*****************************************/
@@ -430,11 +438,12 @@ input {
 }
 
 input {
-  padding: 1em 1em;
+  padding: 0.8em 1em;
   border-radius: 0.25em;
-  border: 1px solid #909090;
+  border: 1px solid var(--IBF-medium-grey);
   font-size: 18px;
   box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(66, 88, 102, 0.1);
 }
 
 input:focus {
@@ -724,14 +733,11 @@ summary::marker {
 
 /*****************************************/
 
-/* Cards go into scroll when the width is reached */
-@media (max-width: 990px) {
-  .side-scroll {
-    flex-direction: row !important;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
+.side-scroll {
+  flex-direction: row !important;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Desktop view */
@@ -801,7 +807,7 @@ summary::marker {
   }
 
   .between {
-    align-items: flex-start;
+    /* align-items: flex-start; */
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
