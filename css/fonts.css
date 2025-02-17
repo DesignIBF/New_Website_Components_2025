@@ -163,10 +163,14 @@ a:hover .card-color {
 } */
 
 a path {
-  transition: 0.1s;
+  transition: 0.3s;
 }
 
-a:hover path {
+#more:hover p {
+  color: var(--IBF-pink);
+}
+
+#more:hover path {
   stroke: var(--IBF-pink);
 }
 
@@ -195,47 +199,59 @@ blockquote.small {
   font-style: normal;
   font-variation-settings: "wdth" 75;
   transition: 0.3s;
-}
-
-.product-title {
   font-size: 22px;
   line-height: var(--line-height-120);
 }
+
 /*****************************************/
 /* Fonts on Mobile                       */
 /*****************************************/
 @media (max-width: 767px) {
   h1 {
     font-size: 32px;
-    line-height: var(--line-height-120);
   }
 
   h2 {
     font-size: 24px;
-    line-height: var(--line-height-120);
   }
 
-  .h2Large {
+  h2.large {
     font-size: 32px;
   }
 
   h3 {
     font-size: 20px;
-    line-height: var(--line-height-120);
   }
 
   h4 {
-    font-size: 16px;
-    line-height: var(--line-height-120);
-    color: var(--IBF-pink);
+    font-size: 18px;
   }
 
-  .product-title {
-    font-size: 22px;
-    line-height: var(--line-height-120);
+  h4.small {
+    font-size: 16px;
   }
 
   .intro {
+    font-size: 18px;
+  }
+
+  p.description {
+    font-size: 12px;
+  }
+
+  p.small {
+    font-size: 12px;
+  }
+
+  blockquote {
+    font-size: 22px;
+  }
+
+  blockquote.small {
+    font-size: 20px;
+  }
+
+  p.product-title {
     font-size: 18px;
   }
 }

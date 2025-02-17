@@ -122,7 +122,7 @@ const components = [
   {
     id: "listsSection",
     filePath: "components/listsSection.html",
-    jsFile: null,
+    jsFile: "scripts/listSection.js",
   },
 
   /* Logos sections */

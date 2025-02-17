@@ -1,5 +1,5 @@
 <!-- Component Container -->
-<section id="spotlight-banner-with-cards" class="bg-image">
+<section id="spotlightBannerWithCards" class="bg-image">
   <!-- Main Container -->
   <div class="container max-10 flex-column gap-24px">
     <!-- Text -->
@@ -10,15 +10,10 @@
       <div class="intro-text-container container flex-column start gap-5">
         <h2 class="large">spotlight Banner With Cards</h2>
         <h4 class="t-left order-1"></h4>
-        <p class="t-left">
-          On this particular Thursday, something was moving quietly through the
-          ionosphere many miles above the surface of the planet; several
-          somethings in fact, several dozen huge yellow chunky slablike
-          somethings, huge as office blocks, silent as birds.
-        </p>
+        <p id="show" class="t-left"></p>
       </div>
 
-      <a target="_blank" href="#" class="btn btn-primary"></a>
+      <a id="show" target="_blank" href="#" class="btn btn-primary"></a>
     </div>
     <!-- Text -->
 
@@ -40,12 +35,17 @@
     </div>
 
     <!-- Card -->
-    <div class="container flex-row gap-24px side-scroll">
+    <div class="container flex-row gap-24px side-scroll small">
       <div data-component="components/cards/productCardSmall.html"></div>
       <div data-component="components/cards/productCardSmall.html"></div>
       <div data-component="components/cards/productCardSmall.html"></div>
       <div data-component="components/cards/productCardSmall.html"></div>
     </div>
     <!-- Card -->
+
+    <div id="hide" class="container max-4 flex-column a-i-start gap-1">
+      <p class="t-left"></p>
+      <a target="_blank" href="#" class="btn btn-primary"></a>
+    </div>
   </div>
 </section>

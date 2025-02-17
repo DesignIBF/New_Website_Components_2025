@@ -71,21 +71,21 @@ const faqData = [
     question: "1. Buying in bulk",
     answer:
       "You can select the product and length you wish and order by the box lots only.",
-    linkText: "Click here for more info",
+    linkText: "This link here is optional",
     linkHref: "#",
   },
   {
     question: "2. Customize your own box",
     answer:
       "Buy by the bunch at farm level and customize your own box. Start a custom box at a grower and fill up that box with more items from that same grower. After your custom box is filled or closed, you can start  buying from all the 3 options again.",
-    linkText: "Click here for more info",
+    linkText: "This link here is optional",
     linkHref: "#",
   },
   {
     question: "3. Shop by a shopping list",
     answer:
       "Use the shopping list technology and let the system buy at the most efficient way. Just add the products, minimum stem length, and quantities you need and let the shopping list technology search through all growers and packing options what will be your best and most affordable way to pack and ship all your flowers. This option works in general for larger quantities.",
-    linkText: "Click here for more info",
+    linkText: "",
     linkHref: "#",
   },
   {
@@ -99,7 +99,7 @@ const faqData = [
     question: "5. Re-order your previous boxes",
     answer:
       "Use the re-order button on your order history page to re-order the same box again for one or more dates.",
-    linkText: "Click here for more info",
+    linkText: "",
     linkHref: "#",
   },
 ];

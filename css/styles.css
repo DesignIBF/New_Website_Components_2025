@@ -69,6 +69,7 @@ html {
 
 body {
   background-color: pink;
+  overflow-x: hidden;
 }
 
 main {
@@ -222,12 +223,6 @@ summary {
   grid-template-columns: 7fr 5fr;
 }
 
-.grid-banners {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
 .grid-lists {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -236,6 +231,14 @@ summary {
 @media (max-width: 1020px) {
   .grid-lists {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 950px) {
+  #uspSection > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
   }
 }
 
@@ -251,6 +254,14 @@ summary {
   }
 }
 
+@media (max-width: 526px) {
+  #uspSection > div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+}
+
 /*****************************************/
 /* Section                               */
 /*****************************************/
@@ -260,7 +271,13 @@ section {
   justify-content: center;
   align-items: center;
   /* border: 1px solid pink; */
-  padding: 3em 2em;
+  padding: 40px 2em;
+}
+
+section#faqSection,
+section#spotlightBanner,
+section#spotlightBannerWithCards {
+  padding: 64px 2em;
 }
 
 /*****************************************/
@@ -279,11 +296,6 @@ section {
   height: auto;
   max-width: 100%; /* Ensures no overflow beyond its parent */
   /* border: 0.01px dotted blue; */
-}
-
-/* Grid Widths */
-.max-75 {
-  max-width: 75%;
 }
 
 .max-12 {
@@ -449,7 +461,7 @@ ul li {
   padding-left: 1em;
 }
 
-ul li::before {
+#articleSection ul li::before {
   content: "•";
   position: absolute;
   left: 0;
@@ -735,6 +747,39 @@ summary::marker {
 }
 
 /*****************************************/
+/* Show and hide things on mobile and on desktop */
+
+#show {
+  display: flex;
+}
+
+#hide {
+  display: none;
+}
+
+/*****************************************/
+/* Show and hide More li items in the list section */
+#more /* the button itself */ {
+  padding-top: 0.5em;
+}
+
+.rotated {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease;
+}
+
+.hidden-li {
+  height: 160px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.open {
+  height: 100%;
+  display: flex;
+}
+
+/*****************************************/
 
 .side-scroll,
 .side-scroll-grid {
@@ -743,21 +788,30 @@ summary::marker {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+
+  margin: 0em -2em;
+  padding: 0 2em 1em;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.side-scroll.small {
+  max-width: calc(var(--col-10) + 4.5rem);
+  /* max-width: var(--col-10); */
 }
 
 @media (max-width: 920px) {
-  #spotlight-banner-with-cards > div > div.flex-column.gap-5.j-c-end {
+  #spotlightBannerWithCards > div > div.flex-column.gap-5.j-c-end {
     display: none;
   }
 }
 
 /* Desktop view */
-@media (min-width: 768px) {
-  .custom-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 20px; /* Adjust gap between items */
+
+@media (max-width: 1124px) {
+  #categoriesLandingpage > div,
+  #faqSection > div {
+    flex-direction: column;
   }
 }
 
@@ -773,15 +827,21 @@ summary::marker {
 
   .side-scroll {
     margin: 0 -1em;
-    padding: 1em;
+    padding: 0em 1em;
     width: 100vw;
-    max-width: 100vw;
   }
 
   .side-scroll-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+    gap: 1.5em 1em;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .side-scroll.small {
+    max-width: 100vw;
   }
 
   .btn {
@@ -851,27 +911,11 @@ summary::marker {
     flex-direction: column;
   }
 
-  .grid-banners {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  #show {
+    display: none;
   }
 
-  /*****************************************/
-  /* Logo fix on mobile                    */
-  /*****************************************/
-  #hs-link-dnd_area-module-1_hs_logo_widget > img {
-    width: 120px !important;
-  }
-}
-
-@media (max-width: 560px) {
-  .grid-banners {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-  #farmBanner {
-    min-height: 150px;
+  #hide {
+    display: flex;
   }
 }

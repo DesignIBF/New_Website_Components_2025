@@ -1,5 +1,5 @@
 .faq-item {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--IBF-medium-grey);
   transition: 0.3s ease;
   padding: 1.5em;
@@ -66,4 +66,9 @@
   z-index: 10;
   color: var(--IBF-pink);
   text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+#answer > a:hover {
+  color: var(--IBF-dark-pink);
 }
