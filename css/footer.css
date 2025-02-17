@@ -7,17 +7,17 @@ ul {
   list-style: none;
 }
 
-a {
+footer a {
   width: fit-content;
 }
 
-a:hover {
+footer a:hover {
   color: var(--IBF-pink);
 }
 
 .grid-footer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 @media (max-width: 767px) {

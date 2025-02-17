@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     h2: "This is an H2",
     h3: "This is an H3",
     h4: "This is an H4",
-    p: "This is sample paragraph text",
+    p: "This is sample lorem paragraph text",
     button: "Click Me",
     a: "This is a button",
     li: "These are list elements",

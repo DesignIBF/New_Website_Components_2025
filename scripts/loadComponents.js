@@ -39,6 +39,8 @@ function loadNestedComponents(parentElement) {
 const components = [
   { id: "nav", filePath: "components/nav.html", jsFile: "scripts/nav.js" },
   { id: "footer", filePath: "components/footer.html", jsFile: null },
+
+  /* Spotlight Banner sections */
   {
     id: "spotlightBanner",
     filePath: "components/spotlightBanner.html",
@@ -59,6 +61,8 @@ const components = [
     filePath: "components/spotlightBannerRegularImageWithCards.html",
     jsFile: null,
   },
+
+  /* Categories sections */
   {
     id: "categoriesHomepage",
     filePath: "components/categoriesHomepage.html",
@@ -69,11 +73,25 @@ const components = [
     filePath: "components/categoriesLandingpage.html",
     jsFile: null,
   },
+
+  /* Banners sections */
   {
     id: "bannersSection",
     filePath: "components/bannersSection.html",
+    jsFile: "scripts/banner.js",
+  },
+  {
+    id: "bannersSection2",
+    filePath: "components/bannersSection2.html",
     jsFile: null,
   },
+  {
+    id: "bannersSection3",
+    filePath: "components/bannersSection3.html",
+    jsFile: null,
+  },
+
+  /* Cards sections */
   {
     id: "contentCardsSection",
     filePath: "components/contentCardsSection.html",
@@ -85,29 +103,49 @@ const components = [
     jsFile: null,
   },
   {
+    id: "moodboardCardsSection",
+    filePath: "components/moodboardCardsSection.html",
+    jsFile: null,
+  },
+
+  /* Farm banners sections */
+  {
     id: "farmBannersSection",
     filePath: "components/farmBannersSection.html",
     jsFile: null,
   },
+
+  /* Usps sections */
   { id: "uspSection", filePath: "components/uspSection.html", jsFile: null },
+
+  /* Lists sections */
   {
     id: "listsSection",
     filePath: "components/listsSection.html",
     jsFile: null,
   },
+
+  /* Logos sections */
   {
     id: "logosSection",
     filePath: "components/logosSection.html",
     jsFile: null,
   },
+
+  /* Article sections */
   {
     id: "articleSection",
     filePath: "components/articleSection.html",
     jsFile: null,
   },
+  // {
+  //   id: "newsletterSection",
+  //   filePath: "components/newsletterSection.html",
+  //   jsFile: null,
+  // },
   {
-    id: "newsletterSection",
-    filePath: "components/newsletterSection.html",
+    id: "gridSection",
+    filePath: "components/gridSection.html",
     jsFile: null,
   },
   {

@@ -2,6 +2,20 @@
   position: relative;
 }
 
+.text-container {
+  padding-top: 0.5rem;
+}
+
+a.card:hover p.product-title,
+a.card:hover p.small {
+  color: var(--IBF-medium-green);
+}
+
+a.categoryCard:hover p.small,
+a.categoryCard:hover p.extraSmall {
+  text-decoration: underline;
+}
+
 /*****************************************/
 /* Content Card New                      */
 /*****************************************/
@@ -9,7 +23,7 @@
   width: 100%;
   height: 100%;
 
-  min-width: var(--col-2);
+  min-width: var(--col-3);
   /* max-width: var(--col-3); */
 
   display: flex;
@@ -17,12 +31,10 @@
   align-items: flex-start;
 
   border: 1px solid var(--IBF-medium-grey);
-  border-radius: 0.25em;
+  border-radius: 0.5em;
 
   overflow: hidden;
   background: white;
-
-  font-size: 16px;
 }
 
 .content-card-new .img-container {
@@ -48,7 +60,7 @@
 }
 
 .content-card-new .text-container {
-  padding: 1em;
+  padding: 0.5rem 1em 1em;
 }
 
 /*****************************************/
@@ -56,12 +68,13 @@
 /*****************************************/
 .product-card-new {
   position: relative;
-  padding: 0.75em;
+
+  padding: 1em;
 
   width: 100%;
   height: 100%;
 
-  min-width: var(--col-2);
+  min-width: var(--col-3);
   /* max-width: var(--col-3); */
 
   display: flex;
@@ -96,15 +109,82 @@
 }
 
 /*****************************************/
+/* Product Card New Small                */
+/*****************************************/
+.product-card-small {
+  position: relative;
+
+  padding: 1em;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: var(--col-2);
+  /* max-width: var(--col-3); */
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0.5em;
+  border: 1px solid var(--IBF-medium-grey);
+  background-color: white;
+}
+
+.product-card-small .img-container {
+  overflow: hidden;
+  /* border-radius: 0; */
+  display: flex;
+  justify-content: center;
+}
+
+.product-card-small h4 {
+  text-align: left;
+}
+
+.product-card-small .img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/*****************************************/
+/* Moodboard card                        */
+/*****************************************/
+.moodboard-card-new {
+  position: relative;
+
+  padding: 1em;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: var(--col-3);
+  /* max-width: var(--col-3); */
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0.5em;
+  border: 1px solid var(--IBF-medium-grey);
+  background-color: white;
+}
+
+/*****************************************/
 /* Heart icon in card                    */
 /*****************************************/
 
 .heart {
   display: flex;
   z-index: 20;
-  padding: 0.5em;
+  padding: 0.3em;
   border-radius: 5em;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   background-color: white;
   position: absolute;
   top: 1.5em;
@@ -114,23 +194,52 @@
 }
 
 .heart-icon {
-  width: 1.25em;
+  width: 100%;
+  max-width: 24px;
   transition: fill 0.3s ease, stroke 0.3s ease;
+  height: auto;
+}
+
+.heart-icon svg {
+  fill: red;
 }
 
 /* Default state (outline) */
 .heart-icon path {
   fill: white;
   stroke: var(--IBF-green);
-  stroke-width: 2;
+  stroke-width: 1.5;
   transition: 0.3s ease;
 }
 
-.heart-icon:hover path {
+.heart:hover path {
   stroke: var(--IBF-pink);
 }
 
-.heart-icon path.hearted {
+.heart path.hearted {
   stroke: var(--IBF-pink); /* New stroke color when active */
   fill: var(--IBF-pink); /* Optional: Fill the heart */
+}
+
+.heart path.hearted:hover {
+  stroke: var(--IBF-dark-pink);
+  fill: var(--IBF-dark-pink);
+}
+
+/*****************************************/
+/* Arrows for the spotlight banner       */
+/*****************************************/
+
+@media (max-width: 767px) {
+  .product-card-new,
+  .content-card-new,
+  .moodboard-card-new {
+    min-width: 0px;
+  }
+
+  .content-card-new .text-container,
+  .product-card-new,
+  .product-card-small {
+    padding: 0.5em;
+  }
 }

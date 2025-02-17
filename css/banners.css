@@ -1,0 +1,52 @@
+#farmBanner,
+#banner {
+  overflow: hidden;
+  height: 100%;
+}
+
+#farmBanner > img,
+#banner > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  object-position: center;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+#farmBanner:hover > img,
+#banner:hover > img {
+  transform: scale(1.1);
+}
+
+#banner .content-container {
+  padding: 2em 1em;
+}
+
+#farmBanner .content-container .text-container,
+#banner .content-container .text-container {
+  padding: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+#farmBanner:hover .btn,
+#banner:hover .btn {
+  color: var(--IBF-white);
+  background: var(--IBF-pink);
+}
+
+#farmBanner {
+  min-height: 200px;
+}
+
+.flag {
+  width: 100%;
+  max-width: 40px;
+  height: auto !important;
+  z-index: 10 !important;
+  position: relative;
+}
