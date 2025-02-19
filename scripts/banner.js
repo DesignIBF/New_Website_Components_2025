@@ -1,43 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("✅ Optimized text truncation initialized.");
+// document.addEventListener("DOMContentLoaded", function () {
+//   console.log("✅ Optimized text truncation initialized.");
 
-  function truncateAllH2s() {
-    const h2Elements = document.querySelectorAll("#bannersSection h2");
+//   function truncateAllH2s() {
+//     const h2Elements = document.querySelectorAll("#bannersSection h2");
 
-    h2Elements.forEach((h2Element) => {
-      const words = h2Element.textContent.trim().split(/\s+/);
-      if (words.length > 10) {
-        const fullText = h2Element.textContent;
-        h2Element.textContent = words.slice(0, 10).join(" ") + "...";
-        h2Element.setAttribute("title", fullText);
-      }
-    });
-  }
+//     h2Elements.forEach((h2Element) => {
+//       const words = h2Element.textContent.trim().split(/\s+/);
+//       if (words.length > 10) {
+//         const fullText = h2Element.textContent;
+//         h2Element.textContent = words.slice(0, 10).join(" ") + "...";
+//         h2Element.setAttribute("title", fullText);
+//       }
+//     });
+//   }
 
-  // Run truncation once after DOMContentLoaded
-  setTimeout(truncateAllH2s, 500);
+//   // Run truncation once after DOMContentLoaded
+//   setTimeout(truncateAllH2s, 500);
 
-  // Prevent excessive calls using requestAnimationFrame
-  let isScheduled = false;
+//   // Prevent excessive calls using requestAnimationFrame
+//   let isScheduled = false;
 
-  const observer = new MutationObserver(() => {
-    if (!isScheduled) {
-      isScheduled = true;
-      requestAnimationFrame(() => {
-        truncateAllH2s();
-        isScheduled = false;
-      });
-    }
-  });
+//   const observer = new MutationObserver(() => {
+//     if (!isScheduled) {
+//       isScheduled = true;
+//       requestAnimationFrame(() => {
+//         truncateAllH2s();
+//         isScheduled = false;
+//       });
+//     }
+//   });
 
-  const bannersSection = document.querySelector("#bannersSection");
-  if (bannersSection) {
-    observer.observe(bannersSection, { childList: true, subtree: true });
-    console.log("👀 Optimized MutationObserver now watching for H2 updates...");
-  } else {
-    console.warn("⚠️ #bannersSection not found. Skipping MutationObserver.");
-  }
-});
+//   const bannersSection = document.querySelector("#bannersSection");
+//   if (bannersSection) {
+//     observer.observe(bannersSection, { childList: true, subtree: true });
+//     console.log("👀 Optimized MutationObserver now watching for H2 updates...");
+//   } else {
+//     console.warn("⚠️ #bannersSection not found. Skipping MutationObserver.");
+//   }
+// });
+
+// sadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdada
+// sadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdada
+// sadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdadasadsadasdasdada
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   console.log("✅ Optimized text truncation (by lines) initialized.");

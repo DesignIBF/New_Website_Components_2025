@@ -274,6 +274,10 @@ section {
   padding: 40px 2em;
 }
 
+section h2 {
+  max-width: var(--col-5);
+}
+
 section#faqSection,
 section#spotlightBanner,
 section#spotlightBannerWithCards {
@@ -774,9 +778,10 @@ summary::marker {
   transition: 0.3s ease;
 }
 
-.open {
-  height: 100%;
+#listsSection .open {
+  height: 330px;
   display: flex;
+  transition: 0.3s ease;
 }
 
 /*****************************************/
@@ -812,6 +817,9 @@ summary::marker {
   #categoriesLandingpage > div,
   #faqSection > div {
     flex-direction: column;
+  }
+  #categoriesLandingpage > div > div.min-2 {
+    max-width: var(--col-5);
   }
 }
 

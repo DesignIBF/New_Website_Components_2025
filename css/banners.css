@@ -4,6 +4,13 @@
   height: 100%;
 }
 
+#banner h2,
+#banner > div > div > h2 {
+  max-height: 80px;
+  max-width: 80%;
+  overflow: hidden;
+}
+
 #farmBanner > img,
 #banner > img {
   position: absolute;

@@ -248,8 +248,4 @@ a.categoryCard:hover p.extraSmall {
     right: 1rem;
     padding: 0.5rem;
   }
-
-  #categoriesLandingpage > div > div.min-2 {
-    max-width: 100%;
-  }
 }
