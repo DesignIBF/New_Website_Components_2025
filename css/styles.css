@@ -46,9 +46,6 @@
   --col-2: 196px;
   --col-1-25: 131px;
   --col-1: 86px;
-
-  /* Spacing */
-  --container-padding: 1rem;
 }
 
 /*****************************************/
@@ -281,7 +278,7 @@ section h2 {
 section#faqSection,
 section#spotlightBanner,
 section#spotlightBannerWithCards {
-  padding: 64px 2em;
+  padding: 4rem 2rem;
 }
 
 /*****************************************/
@@ -802,6 +799,7 @@ summary::marker {
 
 .side-scroll.small {
   max-width: calc(var(--col-10) + 4.5rem);
+
   /* max-width: var(--col-10); */
 }
 
@@ -826,7 +824,7 @@ summary::marker {
 /* Mobile view */
 @media (max-width: 767px) {
   section {
-    padding: 2em 1em;
+    padding: 2rem 1rem !important;
   }
   .container {
     width: 100%;
@@ -888,7 +886,7 @@ summary::marker {
   .hidden-image {
     display: block;
     width: 100vw;
-    margin: -2em -1em 0;
+    margin: -2rem -1rem 0;
     border-radius: 0;
   }
 

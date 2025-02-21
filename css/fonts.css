@@ -136,6 +136,10 @@ a.primary {
   text-decoration: underline;
 }
 
+a.primary.no-underline {
+  text-decoration: none;
+}
+
 a.primary:hover {
   color: var(--IBF-pink);
 }

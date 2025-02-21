@@ -124,6 +124,11 @@ const components = [
     filePath: "components/listsSection.html",
     jsFile: "scripts/listSection.js",
   },
+  {
+    id: "listsSection2",
+    filePath: "components/listsSection2.html",
+    jsFile: "scripts/listSection.js",
+  },
 
   /* Logos sections */
   {
